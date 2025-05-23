@@ -18,10 +18,10 @@ while True:
     if guess.isdigit():
         guess = int(guess)
         if guess == random_number:
-          print("Congratulations! You guessed the number correctly!")
-          break;
+            print("Congratulations! You guessed the number correctly!")
+            break;
         else:
-          print("Sorry, you didn't guess the number. Better luck next time!")
+            print("Sorry, you didn't guess the number. Better luck next time!")
     else:
         print("Please enter a valid number")
         continue;
