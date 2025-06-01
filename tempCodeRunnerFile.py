@@ -1,1 +1,1 @@
-stdscr
+set_alarm
