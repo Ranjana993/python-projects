@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h1 class="mb-4">Contact Us</h1>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-geo-alt-fill"></i> Our Location</h5>
+                            <p class="card-text">
+                                123 Main Street<br>
+                                City, State 10001<br>
+                                Country
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-envelope-fill"></i> Email Us</h5>
+                            <p class="card-text">
+                                <a href="mailto:info@example.com">info@example.com</a><br>
+                                <a href="mailto:support@example.com">support@example.com</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-telephone-fill"></i> Call Us</h5>
+                            <p class="card-text">
+                                +1 (555) 123-4567<br>
+                                Mon-Fri: 9am-5pm
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-chat-left-text-fill"></i> Social Media</h5>
+                            <div class="social-icons">
+                                <a href="#" class="me-2"><i class="bi bi-facebook"></i></a>
+                                <a href="#" class="me-2"><i class="bi bi-twitter"></i></a>
+                                <a href="#" class="me-2"><i class="bi bi-instagram"></i></a>
+                                <a href="#" class="me-2"><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title mb-4">Send Us a Message</h2>
+                    <form method="post" action="{% url 'contact' %}">
+                        {% csrf_token %}
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .social-icons a {
+        font-size: 1.5rem;
+        color: #0d6efd;
+    }
+    .social-icons a:hover {
+        color: #0b5ed7;
+    }
+    .card {
+        transition: transform 0.3s;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+    }
+</style>
+{% endblock %}
